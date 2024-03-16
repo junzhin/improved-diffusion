@@ -3,6 +3,7 @@ import torch as th
 
 from .gaussian_diffusion import GaussianDiffusion
 
+# TODO: 需要的关注的DDIM修改点
 
 def space_timesteps(num_timesteps, section_counts):
     """
@@ -59,7 +60,7 @@ def space_timesteps(num_timesteps, section_counts):
         start_idx += size
     return set(all_steps)
 
-
+# TODO: 需要的关注的DDIM修改点
 class SpacedDiffusion(GaussianDiffusion):
     """
     A diffusion process which can skip steps in a base diffusion process.
@@ -106,7 +107,7 @@ class SpacedDiffusion(GaussianDiffusion):
         # Scaling is done by the wrapped model.
         return t
 
-
+# TODO: 需要的关注的DDIM修改点
 class _WrappedModel:
     def __init__(self, model, timestep_map, rescale_timesteps, original_num_steps):
         self.model = model

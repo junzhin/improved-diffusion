@@ -25,7 +25,7 @@ from .resample import LossAwareSampler, UniformSampler
 # 20-21 within the first ~1K steps of training.
 INITIAL_LOG_LOSS_SCALE = 20.0
 
-
+# TODO: 需要的关注的DDIM修改点
 class TrainLoop:
     def __init__(
         self,

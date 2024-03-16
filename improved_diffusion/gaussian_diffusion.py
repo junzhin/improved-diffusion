@@ -204,7 +204,8 @@ class GaussianDiffusion:
             + _extract_into_tensor(self.sqrt_one_minus_alphas_cumprod, t, x_start.shape)
             * noise
         )
-
+    
+    # TODO: 需要的关注的DDIM修改点
     def q_posterior_mean_variance(self, x_start, x_t, t):
         """
         Compute the mean and variance of the diffusion posterior:
@@ -228,7 +229,8 @@ class GaussianDiffusion:
             == x_start.shape[0]
         )
         return posterior_mean, posterior_variance, posterior_log_variance_clipped
-
+    
+    # TODO: 需要的关注的DDIM修改点
     def p_mean_variance(
         self, model, x, t, clip_denoised=True, denoised_fn=None, model_kwargs=None
     ):
@@ -476,6 +478,8 @@ class GaussianDiffusion:
                 yield out
                 img = out["sample"]
 
+    # TODO: 需要的关注的DDIM修改点
+    
     def ddim_sample(
         self,
         model,
@@ -521,6 +525,8 @@ class GaussianDiffusion:
         sample = mean_pred + nonzero_mask * sigma * noise
         return {"sample": sample, "pred_xstart": out["pred_xstart"]}
 
+    # TODO: 需要的关注的DDIM修改点
+    
     def ddim_reverse_sample(
         self,
         model,
@@ -559,6 +565,7 @@ class GaussianDiffusion:
 
         return {"sample": mean_pred, "pred_xstart": out["pred_xstart"]}
 
+    # TODO: 需要的关注的DDIM修改点
     def ddim_sample_loop(
         self,
         model,
@@ -591,6 +598,7 @@ class GaussianDiffusion:
             final = sample
         return final["sample"]
 
+    # TODO: 需要的关注的DDIM修改点
     def ddim_sample_loop_progressive(
         self,
         model,

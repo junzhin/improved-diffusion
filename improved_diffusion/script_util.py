@@ -34,7 +34,7 @@ def model_and_diffusion_defaults():
         use_scale_shift_norm=True,
     )
 
-
+# TODO: 需要的关注的DDIM修改点
 def create_model_and_diffusion(
     image_size,
     class_cond,
@@ -82,7 +82,7 @@ def create_model_and_diffusion(
     )
     return model, diffusion
 
-
+# TODO: 需要的关注的DDIM修改点
 def create_model(
     image_size,
     num_channels,
@@ -226,7 +226,7 @@ def sr_create_model(
         use_scale_shift_norm=use_scale_shift_norm,
     )
 
-
+# TODO: 需要的关注的DDIM修改点
 def create_gaussian_diffusion(
     *,
     steps=1000,

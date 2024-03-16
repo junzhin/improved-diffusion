@@ -274,7 +274,7 @@ class QKVAttention(nn.Module):
         matmul_ops = 2 * b * (num_spatial ** 2) * c
         model.total_ops += th.DoubleTensor([matmul_ops])
 
-
+# TODO: 需要的关注的DDIM修改点
 class UNetModel(nn.Module):
     """
     The full UNet model with attention and timestep embedding.
