@@ -56,7 +56,6 @@ def main():
         lr_anneal_steps=args.lr_anneal_steps,
     ).run_loop()
 
-    # TODO: 需要的关注的DDIM修改点
 
 def create_argparser():
     defaults = dict(
